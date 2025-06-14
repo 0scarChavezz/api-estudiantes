@@ -1,0 +1,5 @@
+API
+pip install flask
+pip install fastapi uvicorn
+pip install pyodbc
+pip install flask-cors
