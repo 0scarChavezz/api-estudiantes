@@ -1,15 +1,24 @@
 from flask import Flask, jsonify, request
 import pyodbc
 from flask_cors import CORS
+from dotenv import load_dotenv
+import os
+
+# Cargar las variables desde el archivo .env
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 # Configuración de conexión
-server = '64.20.37.138'
-database = 'pruebita'
-username = 'usergestion'
-password = 'Gestion*ppp1'
+# Configuración de conexión usando variables de entorno
+
+server = os.getenv('DB_SERVER')
+database = os.getenv('DB_NAME')
+username = os.getenv('DB_USER')
+password = os.getenv('DB_PASSWORD')
+
 connection_string = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password};TrustServerCertificate=yes'
+
 
 @app.route('/')
 def home():
