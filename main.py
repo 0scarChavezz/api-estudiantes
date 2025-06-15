@@ -42,7 +42,8 @@ def obtener_alumno(codigo):
                 "CorreoAlumno": row.CorreoAlumno,
                 "CelularAlumno": row.CelularAlumno,
                 "DniAlumno": row.DniAlumno,
-                "TotalDeCreditos": row.TotalDeCreditos
+                "TotalDeCreditos": row.TotalDeCreditos,
+                "Genero": row.Genero
             }
             cursor.close()
             conn.close()
