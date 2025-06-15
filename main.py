@@ -34,18 +34,16 @@ def obtener_alumno(codigo):
         row = cursor.fetchone()
 
         if row:
-            columns = [column[0] for column in cursor.description]
-            data = dict(zip(columns, row))
             alumno = {
-                "Id": data["Id"],
-                "CodigoAlumno": data["CodigoAlumno"],
-                "NombresAlumno": data["NombresAlumno"],
-                "ApellidosAlumno": data["ApellidosAlumno"],
-                "CorreoAlumno": data["CorreoAlumno"],
-                "CelularAlumno": data["CelularAlumno"],
-                "DniAlumno": data["DniAlumno"],
-                "TotalDeCreditos": data["TotalDeCreditos"],
-                "Genero": data["Genero"]
+                "Id": row.Id,
+                "CodigoAlumno": row.CodigoAlumno,
+                "NombresAlumno": row.NombresAlumno,
+                "ApellidosAlumno": row.ApellidosAlumno,
+                "CorreoAlumno": row.CorreoAlumno,
+                "CelularAlumno": row.CelularAlumno,
+                "DniAlumno": row.DniAlumno,
+                "TotalDeCreditos": row.TotalDeCreditos,
+                "Genero": row.Genero
             }
             cursor.close()
             conn.close()
