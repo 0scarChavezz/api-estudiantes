@@ -17,9 +17,8 @@ CREATE TABLE Estudiantes (
     CelularAlumno VARCHAR(9),
     DniAlumno VARCHAR(8),
     TotalDeCreditos INT,
-    Genero NVARCHAR(20) NULL  -- Puede ser 'Masculino', 'Femenino', 'No binario', etc.
+    Genero NVARCHAR(20) 
 );
-
 
 INSERT INTO Estudiantes 
 (CodigoAlumno, NombresAlumno, ApellidosAlumno, CorreoAlumno, CelularAlumno, DniAlumno, TotalDeCreditos, Genero)
